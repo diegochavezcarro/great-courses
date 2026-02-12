@@ -94,10 +94,10 @@ app/
 components/
 ├── course-card.tsx      # Existing component
 ├── course-management/
-│   ├── course-modal.tsx      # Main modal container
+│   ├── course-management-modal.tsx # Main modal container
 │   ├── course-list.tsx       # Course listing with search/filter
 │   ├── course-form.tsx       # Create/Edit form component
-│   ├── course-item.tsx       # Individual course row
+│   ├── course-card.tsx       # Individual course display component
 │   └── delete-confirmation.tsx # Delete confirmation dialog
 └── ui/
     ├── modal.tsx        # Reusable modal base component
@@ -116,7 +116,7 @@ data/
 __tests__/
 ├── components/
 │   └── course-management/
-│       ├── course-modal.test.tsx
+│       ├── course-management-modal.test.tsx
 │       ├── course-list.test.tsx
 │       ├── course-form.test.tsx
 │       └── delete-confirmation.test.tsx

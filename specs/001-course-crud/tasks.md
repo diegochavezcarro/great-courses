@@ -171,6 +171,9 @@
 - [ ] T061 Add analytics tracking for course management operations
 - [ ] T062 Final integration testing across all user stories
 - [ ] T063 Performance testing for modal operations and large course lists
+- [ ] T064 [P] Add performance validation for modal open/close timing (<200ms requirement)
+- [ ] T065 [P] Add performance validation for search results timing (<1s for 1000 courses)
+- [ ] T066 Add data synchronization validation between modal and main catalog (FR-010)
 
 ---
 
@@ -182,7 +185,7 @@
 3. **User Story 2 (P2)** (T024-T034) → Can start after foundation, independent  
 4. **User Story 3 (P3)** (T035-T044) → Requires US1 (create) and US2 (list) components
 5. **User Story 4 (P4)** (T045-T054) → Requires US2 (list) for selection, independent of create/edit
-6. **Polish** (T055-T063) → After all user stories are complete
+6. **Polish** (T055-T066) → After all user stories are complete
 
 ### Parallel Execution Opportunities
 
@@ -194,7 +197,7 @@
 - All test tasks (T014-T017, T024-T027, T035-T038, T045-T048) can run in parallel
 - Component creation tasks within each story can run in parallel
 - US1 and US2 can be developed simultaneously after foundation
-- Polish tasks (T055-T058) can run in parallel
+- Polish tasks (T055-T058, T064-T065) can run in parallel
 
 ## Implementation Strategy
 
@@ -203,7 +206,7 @@
 - Provides immediate value: administrators can add new courses
 - Establishes foundation for remaining features
 - Enables early user feedback and validation
-- Estimated effort: 40% of total project
+- Estimated effort: 35% of total project (23/66 tasks)
 
 ### Incremental Delivery
 1. **Sprint 1**: Setup + Foundation + US1 (Course Creation)
