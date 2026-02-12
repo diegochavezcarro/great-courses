@@ -8,9 +8,9 @@ description: "Task list template for feature implementation"
 **Input**: Design documents from `/specs/[###-feature-name]/`
 **Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
 
-**Tests**: Per Constitution Principle IV - No Testing Policy, this project operates without any testing infrastructure. No test tasks will be generated or executed.
+**Tests**: Per Constitution Principle IV - Comprehensive Testing Strategy, every feature must include unit tests, integration tests, and e2e tests as appropriate. Tests are MANDATORY and must pass before feature completion.
 
-**Organization**: Tasks are grouped by user story to enable independent implementation and manual verification of each story.
+**Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
 
 ## Format: `[ID] [P?] [Story] Description`
 
@@ -20,9 +20,9 @@ description: "Task list template for feature implementation"
 
 ## Path Conventions
 
-- **Next.js project**: `app/`, `components/`, `data/` at repository root
-- **Web app**: `app/`, `components/`, `public/`
-- **Mobile-responsive**: Same structure with mobile-first Tailwind classes
+- **Next.js project**: `app/`, `components/`, `data/`, `__tests__/` at repository root
+- **Web app**: `app/`, `components/`, `public/`, `__tests__/`
+- **Testing structure**: `__tests__/components/`, `__tests__/integration/`, `__tests__/e2e/`
 - Paths shown below assume single project - adjust based on plan.md structure
 
 <!-- 
@@ -79,6 +79,14 @@ Examples of foundational tasks (adjust based on your project):
 
 **Manual Verification**: [How to manually verify this story works as expected]
 
+### Tests for User Story 1 (MANDATORY) ✓
+
+> **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
+
+- [ ] T010 [P] [US1] Unit tests for [component/function] in __tests__/components/[name].test.tsx
+- [ ] T011 [P] [US1] Integration test for [user workflow] in __tests__/integration/[name].test.tsx
+- [ ] T012 [P] [US1] E2E test for [critical journey] in __tests__/e2e/[name].spec.ts
+
 ### Implementation for User Story 1
 
 - [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py
@@ -98,6 +106,11 @@ Examples of foundational tasks (adjust based on your project):
 
 **Manual Verification**: [How to manually verify this story works as expected]
 
+### Tests for User Story 2 (MANDATORY) ✓
+
+- [ ] T018 [P] [US2] Unit tests for [component/function] in __tests__/components/[name].test.tsx
+- [ ] T019 [P] [US2] Integration test for [user workflow] in __tests__/integration/[name].test.tsx
+
 ### Implementation for User Story 2
 
 - [ ] T020 [P] [US2] Create [Entity] model in src/models/[entity].py
@@ -114,6 +127,11 @@ Examples of foundational tasks (adjust based on your project):
 **Goal**: [Brief description of what this story delivers]
 
 **Manual Verification**: [How to manually verify this story works as expected]
+
+### Tests for User Story 3 (MANDATORY) ✓
+
+- [ ] T024 [P] [US3] Unit tests for [component/function] in __tests__/components/[name].test.tsx
+- [ ] T025 [P] [US3] Integration test for [user workflow] in __tests__/integration/[name].test.tsx
 
 ### Implementation for User Story 3
 
@@ -181,6 +199,10 @@ Examples of foundational tasks (adjust based on your project):
 ## Parallel Example: User Story 1
 
 ```bash
+# Launch all tests for User Story 1 together:
+Task: "Unit tests for [Component1] in __tests__/components/[component1].test.tsx"
+Task: "Integration test for [workflow] in __tests__/integration/[workflow].test.tsx"
+
 # Launch all component work for User Story 1 together:
 Task: "Create [Component1] in components/[component1].tsx"
 Task: "Create [Component2] in components/[component2].tsx"

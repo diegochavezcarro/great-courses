@@ -5,16 +5,17 @@
 **Status**: Draft  
 **Input**: User description: "$ARGUMENTS"
 
-## User Scenarios & Manual Verification *(mandatory)*
+## User Scenarios & Testing *(mandatory)*
 
 <!--
   IMPORTANT: User stories should be PRIORITIZED as user journeys ordered by importance.
-  Each user story/journey must be INDEPENDENTLY VERIFIABLE - meaning if you implement just ONE of them,
+  Each user story/journey must be INDEPENDENTLY TESTABLE - meaning if you implement just ONE of them,
   you should still have a viable MVP (Minimum Viable Product) that delivers value.
   
   Assign priorities (P1, P2, P3, etc.) to each story, where P1 is the most critical.
   Think of each story as a standalone slice of functionality that can be:
   - Developed independently
+  - Tested independently (unit, integration, e2e)
   - Verified manually independently
   - Deployed independently
   - Demonstrated to users independently
@@ -25,6 +26,8 @@
 [Describe this user journey in plain language]
 
 **Why this priority**: [Explain the value and why it has this priority level]
+
+**Automated Testing**: [Describe unit, integration, and e2e tests needed - e.g., "Unit tests for [components], integration tests for [workflow], e2e tests for [user journey]"]
 
 **Manual Verification**: [Describe how this can be verified manually - e.g., "Can be fully verified by [specific action] and delivers [specific value]"]
 
@@ -41,7 +44,9 @@
 
 **Why this priority**: [Explain the value and why it has this priority level]
 
-**Independent Test**: [Describe how this can be tested independently]
+**Automated Testing**: [Describe unit, integration, and e2e tests needed]
+
+**Manual Verification**: [Describe how this can be verified manually]
 
 **Acceptance Scenarios**:
 
@@ -55,7 +60,9 @@
 
 **Why this priority**: [Explain the value and why it has this priority level]
 
-**Independent Test**: [Describe how this can be tested independently]
+**Automated Testing**: [Describe unit, integration, and e2e tests needed]
+
+**Manual Verification**: [Describe how this can be verified manually]
 
 **Acceptance Scenarios**:
 

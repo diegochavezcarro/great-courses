@@ -20,7 +20,7 @@
 **Language/Version**: [e.g., TypeScript 5.5.3, Next.js 14.2.5 or NEEDS CLARIFICATION]  
 **Primary Dependencies**: [e.g., Next.js, React, Tailwind CSS or NEEDS CLARIFICATION]  
 **Storage**: [if applicable, e.g., JSON files, local storage, external API or N/A]  
-**Testing**: NONE (Per Constitution Principle IV - No Testing Policy)  
+**Testing**: [e.g., Jest + Testing Library, Playwright, Cypress or NEEDS CLARIFICATION]  
 **Target Platform**: [e.g., Web browsers, mobile responsive or NEEDS CLARIFICATION]
 **Project Type**: [single/web/mobile - determines source structure]  
 **Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
@@ -67,7 +67,13 @@ components/
 └── ui/
 
 data/
-└── [data-files].ts
+├── [data-files].ts
+└── types/
+
+__tests__/
+├── components/
+├── integration/
+└── e2e/
 
 # [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
 app/

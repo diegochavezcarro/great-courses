@@ -1,10 +1,11 @@
 <!--
 Sync Impact Report:
-- Version change: Template → 1.0.0
-- Added principles: Clean Code, Simple UX Responsive Design, Minimal Dependencies, No Testing Policy
-- Removed sections: Generic template placeholders
-- Templates requiring updates: ✅ Updated constitution.md
-- Follow-up TODOs: None - all placeholders resolved
+- Version change: 1.0.0 → 2.0.0 (MAJOR - principle redefinition)
+- Modified principles: No Testing Policy → Comprehensive Testing Strategy
+- Added sections: Testing requirements and standards
+- Removed sections: No Testing Policy (Principle IV)
+- Templates requiring updates: ✅ Updated constitution.md, ⚠ Templates need testing restoration
+- Follow-up TODOs: Restore testing guidance in all templates
 -->
 
 # Great Courses Constitution
@@ -22,14 +23,14 @@ User interface must prioritize simplicity and responsiveness across all devices.
 **Rationale**: Simple, responsive design ensures broad accessibility and optimal user experience across device types, reducing support overhead and increasing adoption.
 
 ### III. Minimal Dependencies
-Limit external dependencies to the essential stack: Next.js 14.2.5, React 18.3.1, and Tailwind CSS 3.4.6. No additional libraries without explicit justification and approval. Prefer built-in browser APIs and React/Next.js capabilities over third-party solutions. Each dependency must solve a critical problem that cannot be reasonably implemented in-house.
+Limit external dependencies to the essential stack: Next.js 14.2.5, React 18.3.1, and Tailwind CSS 3.4.6. Additional testing dependencies are permitted and encouraged. Prefer built-in browser APIs and React/Next.js capabilities over third-party solutions for non-testing functionality. Each dependency must solve a critical problem that cannot be reasonably implemented in-house.
 
-**Rationale**: Minimal dependencies reduce security vulnerabilities, bundle size, maintenance overhead, and potential breaking changes during updates.
+**Rationale**: Minimal dependencies reduce security vulnerabilities, bundle size, maintenance overhead, and potential breaking changes during updates, while allowing necessary testing infrastructure.
 
-### IV. No Testing Policy (SUPERSEDES ALL OTHER GUIDANCE)
-This project operates without any testing infrastructure. No unit tests, integration tests, or end-to-end tests will be written or maintained. Testing frameworks, test files, and testing-related dependencies are explicitly prohibited. Development relies on manual verification and production monitoring.
+### IV. Comprehensive Testing Strategy (NON-NEGOTIABLE)
+Every feature must be covered by appropriate tests: unit tests for individual components and functions, integration tests for user workflows, and end-to-end tests for critical user journeys. Use modern testing frameworks suitable for Next.js/React applications. Tests must be maintained alongside code changes and all tests must pass before deployment.
 
-**Rationale**: For this rapid-development educational project, testing overhead is deemed unnecessary. Manual verification during development provides sufficient quality assurance for the intended scope and timeline.
+**Rationale**: Comprehensive testing ensures code reliability, prevents regressions, facilitates confident refactoring, and maintains quality as the application scales.
 
 ## Technology Stack Requirements
 
@@ -37,24 +38,26 @@ This project operates without any testing infrastructure. No unit tests, integra
 **UI Library**: React 18.3.1 (mandatory)  
 **Styling**: Tailwind CSS 3.4.6 (mandatory)
 **Language**: TypeScript 5.5.3 (mandatory)
+**Testing**: Modern testing frameworks for React/Next.js (Jest, Testing Library, Playwright/Cypress)
 **Node.js**: 18.18+ (development requirement)
 
-All dependency versions must match those specified in package.json. Upgrades require constitutional amendment unless they are patch-level security fixes.
+All dependency versions must match those specified in package.json. Upgrades require constitutional amendment unless they are patch-level security fixes. Testing dependencies may be added as needed to support the Comprehensive Testing Strategy.
 
 ## Development Standards
 
-**File Organization**: Follow Next.js App Router conventions with components, app, and data directories
+**File Organization**: Follow Next.js App Router conventions with components, app, data, and tests directories
 **Component Structure**: Functional components with TypeScript interfaces for all props
 **Styling**: Tailwind utility classes only - no custom CSS files except globals.css for resets
 **Code Quality**: ESLint configuration must pass without warnings
 **Performance**: Prioritize Core Web Vitals optimization and mobile performance
+**Testing Structure**: Tests organized by feature and type (unit, integration, e2e) with clear naming conventions
 
 ## Governance
 
-This constitution supersedes all other development practices, templates, and guidance documents. The No Testing Policy (Principle IV) takes precedence over any conflicting guidance in templates or external documentation.
+This constitution supersedes all other development practices, templates, and guidance documents. The Comprehensive Testing Strategy (Principle IV) requires all features to have appropriate test coverage.
 
 **Amendment Process**: Constitution changes require explicit documentation of rationale and version increment following semantic versioning.
-**Compliance Review**: All feature implementations must verify adherence to these four core principles.
+**Compliance Review**: All feature implementations must verify adherence to these four core principles, including testing requirements.
 **Version Control**: Use clear, descriptive commit messages that reference constitutional principles when applicable.
 
-**Version**: 1.0.0 | **Ratified**: 2026-02-11 | **Last Amended**: 2026-02-11
+**Version**: 2.0.0 | **Ratified**: 2026-02-11 | **Last Amended**: 2026-02-11
