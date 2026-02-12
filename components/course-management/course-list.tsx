@@ -38,6 +38,7 @@ export function CourseList({
     const matchesSearch =
       !searchQuery ||
       course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      course.teacher.toLowerCase().includes(searchQuery.toLowerCase()) ||
       course.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       course.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()));
 
@@ -74,7 +75,7 @@ export function CourseList({
 
       <div className="mb-6 space-y-4">
         <Search
-          placeholder="Search courses by title, description, or tags..."
+          placeholder="Search courses by title, teacher, description, or tags..."
           value={searchQuery}
           onSearch={onSearchChange}
         />

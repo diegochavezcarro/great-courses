@@ -32,6 +32,48 @@ npm run build
 npm run start
 ```
 
+## Testing
+
+### Unit & Integration Tests
+
+```bash
+# Run all tests (unit + integration)
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage report
+npm run test:coverage
+
+# Run only unit tests
+npm test -- __tests__/unit/
+
+# Run only integration tests
+npm test -- __tests__/integration/
+```
+
+**Test Coverage:**
+- ✅ **48 Unit Tests** - Component rendering, validation, form behavior
+- ✅ **7 Integration Tests** - Full CRUD workflows, form submission, data persistence
+
+### End-to-End Tests (Playwright)
+
+E2E tests require the dev server to be running:
+
+```bash
+# Terminal 1: Start dev server
+npm run dev
+
+# Terminal 2: Run Playwright tests
+npm run test:e2e
+
+# Run Playwright tests in UI mode (interactive)
+npm run test:e2e:ui
+```
+
+**Note:** E2E tests validate complete user journeys across the application, including teacher assignment workflows, search functionality, and course management operations.
+
 ## Solución de problemas (npm 403 con proxy)
 
 Si ves un error similar a `403 Forbidden - GET https://registry.npmjs.org/...`, revisa si estás detrás de un proxy corporativo o una política de red restrictiva.

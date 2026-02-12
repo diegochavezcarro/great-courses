@@ -50,9 +50,9 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T008 [P] [US1] Unit test for CourseCard teacher display in __tests__/unit/course-card.test.tsx
-- [ ] T009 [P] [US1] Unit test for CourseListItem teacher display in __tests__/unit/course-list-item.test.tsx
-- [ ] T010 [P] [US1] Integration test verifying teacher persists through CRUD in __tests__/integration/course-crud-teacher.test.tsx
+- [X] T008 [P] [US1] Unit test for CourseCard teacher display in __tests__/unit/course-card.test.tsx
+- [X] T009 [P] [US1] Unit test for CourseListItem teacher display in __tests__/unit/course-list-item.test.tsx
+- [X] T010 [P] [US1] Integration test verifying teacher persists through CRUD in __tests__/integration/course-crud-teacher.test.tsx
 - [ ] T011 [US1] E2E test confirming teacher displays in catalog and management in __tests__/e2e/teacher-display.spec.ts
 
 ### Implementation for User Story 1
@@ -74,9 +74,9 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T014 [P] [US2] Unit test for teacher input field rendering in __tests__/unit/course-form-teacher-input.test.tsx
-- [ ] T015 [P] [US2] Unit test for teacher validation errors (empty, too short, too long) in __tests__/unit/teacher-validation.test.ts
-- [ ] T016 [US2] Integration test for course creation with teacher in __tests__/integration/course-create-teacher.test.tsx
+- [X] T014 [P] [US2] Unit test for teacher input field rendering in __tests__/unit/course-form-teacher-input.test.tsx
+- [X] T015 [P] [US2] Unit test for teacher validation errors (empty, too short, too long) in __tests__/unit/teacher-validation.test.ts
+- [X] T016 [US2] Integration test for course creation with teacher in __tests__/integration/course-create-teacher.test.tsx
 - [ ] T017 [US2] E2E test for complete course creation workflow with teacher in __tests__/e2e/teacher-creation-flow.spec.ts
 
 ### Implementation for User Story 2
@@ -97,8 +97,8 @@
 
 ### Tests for User Story 3 (MANDATORY) ✓
 
-- [ ] T021 [P] [US3] Unit test for teacher field pre-population in edit mode in __tests__/unit/course-form-edit-teacher.test.tsx
-- [ ] T022 [P] [US3] Integration test for course update with teacher change in __tests__/integration/course-update-teacher.test.tsx
+- [X] T021 [P] [US3] Unit test for teacher field pre-population in edit mode in __tests__/unit/course-form-edit-teacher.test.tsx
+- [X] T022 [P] [US3] Integration test for course update with teacher change in __tests__/integration/course-update-teacher.test.tsx
 - [ ] T023 [US3] E2E test for complete edit workflow with teacher modification in __tests__/e2e/teacher-update-flow.spec.ts
 
 ### Implementation for User Story 3
@@ -118,7 +118,7 @@
 
 ### Tests for User Story 4 (MANDATORY) ✓
 
-- [ ] T026 [P] [US4] Unit test for warning badge display when course lacks teacher in __tests__/unit/course-form-warning-badge.test.tsx
+- [X] T026 [P] [US4] Unit test for warning badge display when course lacks teacher in __tests__/unit/course-form-warning-badge.test.tsx
 - [ ] T027 [P] [US4] Integration test for migration workflow (edit course without teacher) in __tests__/integration/course-migration-teacher.test.tsx
 - [ ] T028 [US4] E2E test for complete migration journey (edit → see warning → add teacher → save) in __tests__/e2e/teacher-migration-flow.spec.ts
 
@@ -135,8 +135,8 @@
 
 **Purpose**: Final improvements affecting multiple user stories
 
-- [ ] T031 [P] Run all unit tests and verify 100% pass rate
-- [ ] T032 [P] Run all integration tests and verify 100% pass rate
+- [X] T031 [P] Run all unit tests and verify 100% pass rate
+- [X] T032 [P] Run all integration tests and verify 100% pass rate
 - [ ] T033 [P] Run all e2e tests and verify 100% pass rate
 - [X] T034 Build project and verify no TypeScript errors
 - [X] T035 Manual testing of all quickstart.md scenarios
