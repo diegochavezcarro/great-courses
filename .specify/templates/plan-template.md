@@ -17,11 +17,11 @@
   the iteration process.
 -->
 
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
+**Language/Version**: [e.g., TypeScript 5.5.3, Next.js 14.2.5 or NEEDS CLARIFICATION]  
+**Primary Dependencies**: [e.g., Next.js, React, Tailwind CSS or NEEDS CLARIFICATION]  
+**Storage**: [if applicable, e.g., JSON files, local storage, external API or N/A]  
+**Testing**: NONE (Per Constitution Principle IV - No Testing Policy)  
+**Target Platform**: [e.g., Web browsers, mobile responsive or NEEDS CLARIFICATION]
 **Project Type**: [single/web/mobile - determines source structure]  
 **Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
 **Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
@@ -57,27 +57,29 @@ specs/[###-feature]/
 
 ```text
 # [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
-src/
-├── models/
-├── services/
-├── cli/
-└── lib/
+app/
+├── globals.css
+├── layout.tsx
+└── page.tsx
 
-tests/
-├── contract/
-├── integration/
-└── unit/
+components/
+├── [component-name].tsx
+└── ui/
+
+data/
+└── [data-files].ts
 
 # [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
-backend/
-├── src/
-│   ├── models/
-│   ├── services/
-│   └── api/
-└── tests/
+app/
+├── api/
+│   └── [route]/
+│       └── route.ts
+├── [page]/
+│   └── page.tsx
+├── globals.css
+└── layout.tsx
 
-frontend/
-├── src/
+components/
 │   ├── components/
 │   ├── pages/
 │   └── services/
