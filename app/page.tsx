@@ -1,7 +1,14 @@
+'use client';
+
+import { useState } from 'react';
 import { CourseCard } from "@/components/course-card";
-import { featuredCourses } from "@/data/courses";
+import { featuredCourses, Course } from "@/data/courses";
+import { CourseManagementModal } from "@/components/course-management/course-management-modal";
 
 export default function HomePage() {
+  const [courses, setCourses] = useState<Course[]>(featuredCourses);
+  const [isManagementModalOpen, setIsManagementModalOpen] = useState(false);
+
   return (
     <main className="mx-auto min-h-screen w-full max-w-6xl px-6 py-12 md:px-8">
       <section className="relative overflow-hidden rounded-3xl bg-slate-900 px-8 py-14 text-white shadow-xl">
@@ -25,6 +32,12 @@ export default function HomePage() {
             <button className="rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold transition hover:bg-white/20">
               Ver demo
             </button>
+            <button 
+              onClick={() => setIsManagementModalOpen(true)}
+              className="rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold transition hover:bg-white/20"
+            >
+              Manage Courses
+            </button>
           </div>
         </div>
       </section>
@@ -43,11 +56,18 @@ export default function HomePage() {
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {featuredCourses.map((course) => (
+          {courses.map((course) => (
             <CourseCard key={course.id} course={course} />
           ))}
         </div>
       </section>
+
+      <CourseManagementModal
+        isOpen={isManagementModalOpen}
+        onClose={() => setIsManagementModalOpen(false)}
+        courses={courses}
+        onCoursesUpdate={setCourses}
+      />
     </main>
   );
 }
