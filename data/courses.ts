@@ -3,6 +3,7 @@ export type CourseLevel = "Principiante" | "Intermedio" | "Avanzado";
 export type Course = {
   id: string;
   title: string;
+  teacher: string;
   category: string;
   level: CourseLevel;
   lessons: number;
@@ -16,6 +17,7 @@ export const featuredCourses: Course[] = [
   {
     id: "nextjs-bootcamp",
     title: "Next.js Bootcamp 2026",
+    teacher: "Dr. Sarah Johnson",
     category: "Desarrollo Web",
     level: "Intermedio",
     lessons: 24,
@@ -28,6 +30,7 @@ export const featuredCourses: Course[] = [
   {
     id: "tailwind-design-system",
     title: "Tailwind + Design Systems",
+    teacher: "Prof. Michael Chen",
     category: "UI/UX",
     level: "Principiante",
     lessons: 18,
@@ -40,6 +43,7 @@ export const featuredCourses: Course[] = [
   {
     id: "ia-productividad",
     title: "IA para Productividad Profesional",
+    teacher: "Dr. Emily Williams",
     category: "Productividad",
     level: "Principiante",
     lessons: 12,

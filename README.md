@@ -50,3 +50,43 @@ unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy npm_config_http_proxy npm_co
 # Reintentar instalación
 npm install
 ```
+## Course Schema
+
+The application manages courses with the following structure:
+
+```typescript
+interface Course {
+  id: string;           // Unique identifier (auto-generated from title)
+  title: string;        // Course title (e.g., "Next.js Bootcamp 2026")
+  teacher: string;      // Instructor name (e.g., "Dr. Sarah Johnson")
+  category: string;     // Course category (e.g., "Web Development")
+  level: 'Principiante' | 'Intermedio' | 'Avanzado';
+  lessons: number;      // Number of lessons
+  duration: string;     // Duration (e.g., "40 horas")
+  rating: number;       // Rating (0-5)
+  description: string;  // Course description
+  tags: string[];       // Searchable tags
+}
+```
+
+### Validation Rules
+
+- **Title**: Required, 3-100 characters, unique
+- **Teacher**: Required, 2-100 characters
+- **Category**: Required, 2-50 characters
+- **Level**: Required, must be one of: Principiante, Intermedio, Avanzado
+- **Lessons**: Required, positive integer
+- **Duration**: Required, must include "horas", "días", "semanas", or "meses"
+- **Rating**: Optional, 0-5
+- **Description**: Required, 10-500 characters
+- **Tags**: Optional array of strings
+
+### Features
+
+- ✅ Course display in responsive card layout
+- ✅ Full CRUD operations (Create, Read, Update, Delete)
+- ✅ Search by title, teacher, description, or tags
+- ✅ Filter by category and level
+- ✅ Teacher assignment and display
+- ✅ Form validation with error messages
+- ✅ Migration support for existing courses

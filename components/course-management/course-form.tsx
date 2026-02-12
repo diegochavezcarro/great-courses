@@ -27,6 +27,7 @@ export function CourseForm({
 }: CourseFormProps) {
   const [formData, setFormData] = useState<CourseFormData>({
     title: initialData?.title || '',
+    teacher: initialData?.teacher || '',
     category: initialData?.category || '',
     level: initialData?.level || '',
     lessons: initialData?.lessons || '',
@@ -88,6 +89,14 @@ export function CourseForm({
         </div>
       )}
 
+      {mode === 'edit' && initialData && !initialData.teacher && (
+        <div className="mb-4 p-3 bg-yellow-50 border border-yellow-200 rounded-md">
+          <p className="text-sm text-yellow-800">
+            ⚠️ This course requires a teacher assignment. Please add teacher information below.
+          </p>
+        </div>
+      )}
+
       {validation.warnings.length > 0 && (
         <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-yellow-700 text-sm">
           {validation.warnings.map((warning, index) => (
@@ -103,6 +112,15 @@ export function CourseForm({
         onChange={(e) => setFormData({ ...formData, title: e.target.value })}
         error={validation.errors.title}
         placeholder="e.g., Next.js Bootcamp 2026"
+      />
+
+      <Input
+        label="Teacher"
+        required
+        value={formData.teacher}
+        onChange={(e) => setFormData({ ...formData, teacher: e.target.value })}
+        error={validation.errors.teacher}
+        placeholder="e.g., Dr. Sarah Johnson"
       />
 
       <Input
