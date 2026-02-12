@@ -25,6 +25,7 @@ export class CourseService {
       const queryMatch =
         !filters.query ||
         course.title.toLowerCase().includes(filters.query.toLowerCase()) ||
+        course.teacher.toLowerCase().includes(filters.query.toLowerCase()) ||
         course.description.toLowerCase().includes(filters.query.toLowerCase()) ||
         course.tags.some((tag) =>
           tag.toLowerCase().includes(filters.query.toLowerCase())
@@ -41,6 +42,7 @@ export class CourseService {
     const newCourse: Course = {
       id: generateCourseId(formData.title),
       title: formData.title,
+      teacher: formData.teacher,
       category: formData.category,
       level: formData.level as Course['level'],
       lessons: Number(formData.lessons),
@@ -64,6 +66,7 @@ export class CourseService {
     const updatedCourse: Course = {
       ...this.courses[index],
       ...(updates.title && { title: updates.title }),
+      ...(updates.teacher && { teacher: updates.teacher }),
       ...(updates.category && { category: updates.category }),
       ...(updates.level && { level: updates.level as Course['level'] }),
       ...(updates.lessons && { lessons: Number(updates.lessons) }),

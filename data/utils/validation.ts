@@ -2,6 +2,7 @@ import { Course, CourseLevel } from '../courses';
 
 export interface CourseFormData {
   title: string;
+  teacher: string;
   category: string;
   level: CourseLevel | '';
   lessons: number | '';
@@ -38,6 +39,15 @@ export function validateCourseForm(
     if (duplicateTitle) {
       warnings.push('A course with this title already exists');
     }
+  }
+
+  // Teacher validation
+  if (!data.teacher || !data.teacher.trim()) {
+    errors.teacher = 'Teacher name is required';
+  } else if (data.teacher.trim().length < 2) {
+    errors.teacher = 'Teacher name must be at least 2 characters';
+  } else if (data.teacher.trim().length > 100) {
+    errors.teacher = 'Teacher name must not exceed 100 characters';
   }
 
   // Category validation
