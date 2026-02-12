@@ -12,6 +12,8 @@
 - Q: Should the management interface be a modal dialog, separate page, or side panel? → A: Modal dialog that opens over the current page with full CRUD interface
 - Q: What should happen when creating a course with duplicate ID or title? → A: Auto-generate unique IDs, warn about duplicate titles but allow them
 - Q: Should course ratings be manually entered by administrators or calculated from user feedback? → A: Manual rating entry by administrators (0-5 scale)
+- Q: Should course data changes be saved automatically or require explicit user save action? → A: Auto-save changes immediately with optimistic UI updates
+- Q: What should happen when closing modal with unsaved form changes? → A: Allow immediate modal close without warnings or data loss prevention
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -91,6 +93,7 @@ Content administrators need to remove outdated or incorrect courses from the cat
 
 - System auto-generates unique IDs when creating courses to prevent ID conflicts
 - System displays warning message when users enter duplicate titles but allows creation
+- Modal can be closed immediately without data loss warnings - users rely on auto-save behavior
 - How does system handle deletion of a course that might be referenced elsewhere?
 - What if concurrent users try to edit the same course simultaneously?
 - How does the system behave with very long course descriptions or titles?
@@ -126,7 +129,7 @@ Content administrators need to remove outdated or incorrect courses from the cat
 - **SC-003**: All course management operations (create, read, update, delete) complete successfully 99% of the time
 - **SC-004**: Course data validation prevents 100% of invalid course entries from being saved
 - **SC-005**: The management interface remains responsive with up to 500 courses displayed simultaneously
-- **SC-006**: Course changes appear immediately in both management interface and public catalog without page refresh
+- **SC-006**: Course changes are auto-saved immediately and appear in both management interface and public catalog without page refresh
 
 ## Assumptions
 
@@ -135,6 +138,6 @@ Content administrators need to remove outdated or incorrect courses from the cat
 - Course IDs must remain unique and URL-friendly for potential future routing
 - All course fields from the existing Course type definition are required except where explicitly marked optional
 - The management interface will follow the existing design system (Tailwind CSS classes and color scheme)
-- Course creation, editing, and deletion will happen synchronously with immediate UI updates
+- Course creation, editing, and deletion will auto-save immediately with optimistic UI updates
 - **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
 - **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
