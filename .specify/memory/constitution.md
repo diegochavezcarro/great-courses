@@ -52,6 +52,12 @@ All dependency versions must match those specified in package.json. Upgrades req
 **Performance**: Prioritize Core Web Vitals optimization and mobile performance
 **Testing Structure**: Tests organized by feature and type (unit, integration, e2e) with clear naming conventions
 
+## Skills Enforcement
+
+The following skills are mandatory for frontend development:
+
+- skills/frontend/nextjs-best-practices.md
+
 ## Governance
 
 This constitution supersedes all other development practices, templates, and guidance documents. The Comprehensive Testing Strategy (Principle IV) requires all features to have appropriate test coverage.
